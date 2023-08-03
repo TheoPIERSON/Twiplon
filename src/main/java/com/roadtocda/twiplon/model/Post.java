@@ -1,9 +1,10 @@
 package com.roadtocda.twiplon.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +17,11 @@ import jakarta.persistence.OneToMany;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idpost;
+    private int idpost;
 
     private String content;
-    private Date datecreation;
+    @Column(columnDefinition = "DATE")
+    private Timestamp datecreation;
 
     // Clé étrangère vers l'utilisateur qui a créé la publication
     @ManyToOne
@@ -36,7 +38,7 @@ public class Post {
     
     //Constructor
     
-    public Post(Long idpost, String content, Date datecreation, Users user, List<Likes> likes, List<Comment> comments) {
+    public Post(int idpost, String content, Timestamp datecreation, Users user, List<Likes> likes, List<Comment> comments) {
 		super();
 		this.idpost = idpost;
 		this.content = content;
@@ -56,19 +58,19 @@ public class Post {
 		this.content = content;
 	}
 
-	public Long getIdpost() {
+	public int getIdpost() {
 		return idpost;
 	}
 
-	public void setIdpost(Long idpost) {
+	public void setIdpost(int idpost) {
 		this.idpost = idpost;
 	}
 
-	public Date getDatecreation() {
+	public Timestamp getTimestampcreation() {
 		return datecreation;
 	}
 
-	public void setDatecreation(Date datecreation) {
+	public void setTimestampcreation(Timestamp datecreation) {
 		this.datecreation = datecreation;
 	}
 

@@ -10,10 +10,10 @@ import jakarta.persistence.ManyToOne;
 @IdClass(LikesId.class)
 public class Likes {
 	@Id
-	private Long id_user;
+	private int id_user;
 
 	@Id
-	private Long idpost;
+	private int idpost;
 
 	// Relation Many-to-One vers la publication (plusieurs likes sont associés à une publication)
 	@ManyToOne
@@ -23,19 +23,19 @@ public class Likes {
 
 	// Getters et Setters (à générer ou écrire manuellement)
 
-	public Long getId_user() {
+	public int getId_user() {
 		return id_user;
 	}
 
-	public void setId_user(Long id_user) {
+	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
 
-	public Long getIdpost() {
+	public int getIdpost() {
 		return idpost;
 	}
 
-	public void setIdpost(Long idpost) {
+	public void setIdpost(int idpost) {
 		this.idpost = idpost;
 	}
 

@@ -1,8 +1,10 @@
 package com.roadtocda.twiplon.model;
-import java.util.Date;
+
+import java.sql.Timestamp;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,19 +15,20 @@ import jakarta.persistence.OneToMany;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_user;
+    private int id_user;
 
     private String username;
 	private String firstname;
     private String lastname;
-    private Date datecreation;
+    @Column(columnDefinition = "DATE")
+    private Timestamp datecreation;
 
     
  // Relation One-to-Many avec les publications (un utilisateur peut avoir plusieurs publications)
-    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Post> posts;
     
-    public Long getId_user() {
+    public int getId_user() {
 		return id_user;
 	}
 
@@ -41,13 +44,11 @@ public class Users {
 		return lastname;
 	}
 
-	public Date getDatecreation() {
+	public Timestamp getDatecreation() {
 		return datecreation;
 	}
 
-
-
-	public void setId_user(Long id_user) {
+	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
 
@@ -63,7 +64,7 @@ public class Users {
 		this.lastname = lastname;
 	}
 
-	public void setDatecreation(Date datecreation) {
+	public void setDatecreation(Timestamp datecreation) {
 		this.datecreation = datecreation;
 	}
 
