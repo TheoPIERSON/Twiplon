@@ -38,6 +38,10 @@ public class Post {
     
     //Constructor
     
+    public Post() {
+        // Ne rien faire, laisser vide
+    }
+    
     public Post(int idpost, String content, Timestamp datecreation, Users user, List<Likes> likes, List<Comment> comments) {
 		super();
 		this.idpost = idpost;
@@ -97,5 +101,14 @@ public class Post {
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
+
+	public Timestamp getDatecreation() {
+		return datecreation;
+	}
+
+	public void setDatecreation(Timestamp datecreation) {
+		this.datecreation = datecreation;
+	}
+	
     
 }

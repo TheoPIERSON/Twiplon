@@ -24,10 +24,10 @@ public class PostService {
 	private CommentsRepository commentsrepository;
 
 	public Optional<Post> getPost(long id) {
-		return PostRepository.findById(id);
+		return postrepository.findById(id);
 	}
 	
-	public Iterable<Post> getAllUsers(){
-		return usersrepository.findAll();
+	public Iterable<Post> getAllPosts(){
+		return postrepository.findAll();
 	}
 }
