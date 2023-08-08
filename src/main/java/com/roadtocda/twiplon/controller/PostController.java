@@ -18,6 +18,6 @@ public class PostController {
 		public String Posts(@RequestParam(name="name", required=false, defaultValue="PostWolrd") String name, Model model) {
 			model.addAttribute("name", name);
 			model.addAttribute("allPosts", postService.getAllPosts());
-			return "post";	
+			return "posts";	
 	}
 }

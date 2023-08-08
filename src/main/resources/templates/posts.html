@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <link rel="stylesheet" href="/src/main/resources/static/css/style.css/" />
+    <link rel="stylesheet" th:href="@{/css/posts.css}" />
+    <link rel="stylesheet" href="/src/main/resources/static/css/posts.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
@@ -40,7 +40,7 @@
           </g>
         </g>
       </svg>
-      <span>Accueil</span>
+      <h2>Accueil</h2>
       <svg class="iconeProfil" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -63,9 +63,62 @@
     </header>
     <main>
       <div class="UserPost" th:each="post : ${allPosts}">
-        <p th:text="'username '+${post.content}"></p>
-        <p th:text="${post.user.id_user}"></p>
-        <p th:text="'date ' + ${post.datecreation}"></p>
+        <div class="postHead">
+          <p th:text="${post.user.username}"></p>
+          <p th:text="' publié le ' + ${post.datecreation}"></p>
+        </div>
+        <div class="postMain">
+          <p th:text="${post.content}"></p>
+        </div>
+        <div class="postFooter">
+          <div class="like">
+            <span class="likeIcon unliked"
+              ><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M11.8456 6.42726L12 6.59097L12.1544 6.42726C14.132 4.33053 17.4026 4.57697 19.0807 6.94915C20.57 9.05459 20.2133 12.0335 18.275 13.6776L12 19L5.725 13.6776C3.78668 12.0335 3.42999 9.05459 4.91934 6.94915C6.59738 4.57698 9.86801 4.33053 11.8456 6.42726Z"
+                    stroke="#464455"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g></svg
+            ></span>
+            <span
+              ><svg
+                class="likeIcon liked"
+                version="1.1"
+                id="_x32_"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="201px"
+                height="201px"
+                viewBox="-25.6 -25.6 563.20 563.20"
+                xml:space="preserve"
+                fill="#e72323"
+                stroke="#e72323"
+                stroke-width="24.576"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <style type="text/css">
+                    .st0 {
+                      fill: #e72323;
+                    }
+                  </style>
+                  <g>
+                    <path
+                      class="st0"
+                      d="M473.984,74.248c-50.688-50.703-132.875-50.703-183.563,0c-17.563,17.547-29.031,38.891-34.438,61.391 c-5.375-22.5-16.844-43.844-34.406-61.391c-50.688-50.703-132.875-50.703-183.563,0c-50.688,50.688-50.688,132.875,0,183.547 l217.969,217.984l218-217.984C524.672,207.123,524.672,124.936,473.984,74.248z"
+                    ></path>
+                  </g>
+                </g></svg
+            ></span>
+            <span>0 likes</span>
+          </div>
+        </div>
       </div>
     </main>
   </body>
