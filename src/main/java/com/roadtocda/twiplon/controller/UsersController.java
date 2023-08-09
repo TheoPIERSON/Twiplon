@@ -20,10 +20,16 @@ public class UsersController {
 		return usersservice.getAllUsers();
 	}*/
 	
-	@GetMapping("/users")
+	/*@GetMapping("/users")
     public String Users(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
 		model.addAttribute("AllUsers", usersservice.getAllUsers());
-        return "index";
+        return "users";
+    }*/
+	@GetMapping("/user")
+    public String Users(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+		model.addAttribute("name", name);
+		model.addAttribute("OneUser", usersservice.getUser(1));
+        return "user";
     }
 }

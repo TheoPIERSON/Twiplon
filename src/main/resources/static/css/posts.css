@@ -37,14 +37,14 @@ h2 {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(187, 203, 220);
 }
 
 .postMain {
   text-align: justify;
   margin-top: 2rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(187, 203, 220);
 }
 .postFooter {
   display: flex;
@@ -53,14 +53,20 @@ h2 {
 }
 
 .UserPost {
-  display: inline-block;
-  width: 50%;
-  margin-left: 25%;
-  margin-top: 2rem;
+  display: grid;
+  width: 45%;
+  margin: 1rem 3rem;
   padding: 1rem;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(241, 247, 254);
+  border: 1px solid rgb(187, 203, 220);
 }
-
-.like {
+main {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.like {
+  width: 100%;
 }

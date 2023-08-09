@@ -10,11 +10,8 @@
 
   <body>
     <header>
-      <div th:each="user : ${AllUsers}">
-        <p th:text="'username '+${user.username}"></p>
-        <p th:text="${user.firstname}"></p>
-        <p th:text="${user.lastname}"></p>
-        <p th:text="${user.datecreation}"></p>
+      <div>
+        <p th:text="'username '+${OneUser.username}"></p>
       </div>
     </header>
   </body>
