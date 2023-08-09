@@ -70,3 +70,12 @@ main {
 .like {
   width: 100%;
 }
+.likeIcon {
+  width: 2rem;
+  padding: 0%;
+  border: none;
+  background-color: transparent;
+}
+main svg {
+  width: 100%;
+}
