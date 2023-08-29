@@ -23,7 +23,7 @@ h2 {
 
 .unliked {
   display: flex;
-  width: 1.2rem;
+  width: 1.6rem;
 }
 .liked {
   display: none;
@@ -70,7 +70,7 @@ main {
 .like {
   width: 100%;
 }
-.likeIcon {
+#btnLike {
   width: 2rem;
   padding: 0%;
   border: none;

@@ -1,0 +1,49 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin: 1rem;
+  padding: 0%;
+}
+header svg {
+  width: 1.5rem;
+  padding: 1rem;
+}
+header h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  display: inline-block;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("https://imgs.search.brave.com/by3iUm-xNl7DmSfF0a8Fa-fc2afbNLXeP2ultg-2bmI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9yZXNp/emluZy5mbGl4c3Rl/ci5jb20vVk50SkRo/UWljZWlBczRRaW5u/S3BUT0NLcXUwPS8z/MDB4MzAwL3YyL2h0/dHA6Ly9tZWRpYS5i/YXNlbGluZXJlc2Vh/cmNoLmNvbS9pbWFn/ZXMvMjYwMzYyLzI2/MDM2Ml9mdWxsLmpw/Zw");
+}
+.description {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 1rem;
+}
+.btnModifier button {
+  padding: 0.5rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(222, 55, 55);
+  color: white;
+  font-weight: bold;
+}

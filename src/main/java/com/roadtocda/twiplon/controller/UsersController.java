@@ -29,7 +29,7 @@ public class UsersController {
 	@GetMapping("/user")
     public String Users(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
-		model.addAttribute("OneUser", usersservice.getUser(1));
+		model.addAttribute("OneUser", usersservice.getUser(2));
         return "user";
     }
 }

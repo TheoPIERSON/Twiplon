@@ -73,8 +73,14 @@
         </div>
         <div class="postFooter">
           <div class="like">
-            <button class="likeIcon unliked">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button id="btnLike">
+              <svg
+                id="unlikedIcon"
+                class="likeIcon unliked"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                 <g id="SVGRepo_iconCarrier">
@@ -86,11 +92,10 @@
                   ></path>
                 </g>
               </svg>
-            </button>
-            <button class="likeIcon liked">
               <svg
+                id="likedIcon"
+                class="likeIcon liked"
                 version="1.1"
-                id="_x32_"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 width="201px"
