@@ -1,19 +1,23 @@
-let btnLike = document.getElementById("btnLike");
-let liked = document.getElementById("likedIcon");
-let unLiked = document.getElementById("unlikedIcon");
-let isLiked = false;
+// Sélectionnez tous les boutons avec la classe .btnLike
+let btnLikes = document.querySelectorAll(".btnLike");
 
-btnLike.addEventListener("click", function () {
-  console.log("Cliqué sur le bouton de like");
-  if (isLiked) {
-    isLiked = false;
-    liked.style.display = "none";
-    unLiked.style.display = "flex";
-    console.log("Disliked");
-  } else {
-    isLiked = true;
-    liked.style.display = "flex";
-    unLiked.style.display = "none";
-    console.log("Liked");
-  }
+btnLikes.forEach((btnLike) => {
+  // Attachez un écouteur de clic à chaque bouton
+  btnLike.addEventListener("click", function () {
+    let likedIcon = btnLike.querySelector(".likedIcon");
+    let unLikedIcon = btnLike.querySelector(".unlikedIcon");
+    let isLiked = btnLike.getAttribute("data-liked") === "true"; // Obtenez l'état actuel du bouton
+
+    if (isLiked) {
+      btnLike.setAttribute("data-liked", "false"); // Inversez l'état
+      likedIcon.style.display = "none";
+      unLikedIcon.style.display = "flex";
+      console.log("Disliked");
+    } else {
+      btnLike.setAttribute("data-liked", "true"); // Inversez l'état
+      likedIcon.style.display = "flex";
+      unLikedIcon.style.display = "none";
+      console.log("Liked");
+    }
+  });
 });
